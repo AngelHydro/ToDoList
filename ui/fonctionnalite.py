@@ -10,7 +10,7 @@ class Fonctionnalite:
 
     def __init__(self):
         """Constructeur"""
-        self.liste = {"Faire la vaisselle": False}
+        self.liste = {"Faire la vaisselle": False, "Faire la cuisine": False}
 
     def __str__(self):
         return f"Voici votre liste de tâches : {self.liste}"

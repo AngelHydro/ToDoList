@@ -12,7 +12,7 @@ class Interface:
 
     def start(self):
         self.task_item.afficher_task()
-        # self.button_ajouter = Button()
+        self.button_ajouter = Button()
         # self.button_complement = Button()
         # self.button_supprimer = Button()
         # self.button_modifier = Button()
