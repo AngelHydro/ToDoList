@@ -26,12 +26,12 @@ class TaskItem:
             self.pos_task = self.txt_task.get_rect(center=self.rect_task.center)
             self.surface.blit(self.txt_task, self.pos_task)
 
-    def hauteur_tasks(
+    def height_tasks(
         self,
     ):  # retourne la hauteur prise sur l'écran par les tâches (utile pour placer le bouton ajouter)
         return self.y + 50
 
-    def largeur_tasks(self):
+    def width_tasks(self):
         return (
             self.x + self.width
         )  # retourne la largeur prise sur l'écran par les tâches (utile pour placer les coches)
