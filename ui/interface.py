@@ -1,6 +1,12 @@
-import pygame
+import os
+import sys
 
-from ui.button import Button
+# On ajoute le dossier parent au chemin Python
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+# Maintenant l'import fonctionne
+
+import config
+from ui.button import Button, Coche
 
 # from input_field import *
 from ui.task_item import TaskItem
@@ -33,7 +39,7 @@ class Interface:
                 self.coche_y + 13,
                 50,
                 50,
-                "",
+                "✓",
                 (0, 0, 66),
                 (),
                 2,
@@ -67,5 +73,27 @@ class Interface:
             False,
         )
         self.button_ajouter.draw(self.surface)  # afficher bouton ajouter
-        # self.button_supprimer = Button()
-        # self.button_modifier = Button()
+        self.coche = Coche(
+            self.largeur_taches + 13,
+            self.coche_y + 13,
+            50,
+            50,
+            "",
+            config.GREEN,
+            config.YELLOW,
+            2,
+        )  # créer une instance de la classe Coche
+
+    def interaction_button(self, pos):
+        if self.button_coche.rect.collidepoint(pos):
+            if self.button_coche.enabled:  # pour le bouton coche
+                self.coche.cocher(self.surface)
+            elif self.button_ajouter.enabled:  # pour le bouton ajouter
+                pass
+            elif self.button_complement.enabled:  # pour le bouton complément
+                pass
+            """les futurs boutons à ajouter :
+                - supprimer
+                - annuler
+                - modifier
+                - valider"""

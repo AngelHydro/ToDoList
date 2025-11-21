@@ -7,6 +7,7 @@ class TaskItem:
     """Classe TaskItem qui sert à afficher chaque élément de la liste des tâches"""
 
     def __init__(self, surface):
+        """Constructeur"""
         self.surface = surface
         self.liste_tasks = Fonctionnalite()
         self.width = self.surface.get_width() // 3
@@ -15,6 +16,7 @@ class TaskItem:
         self.y = 0
 
     def afficher_task(self):
+        """Méthode qui affiche chaque ligne de la tâche"""
         self.y = 0
         self.font_task = pygame.font.SysFont("Calibri", 20)
         for cle in self.liste_tasks.liste.keys():
