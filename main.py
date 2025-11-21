@@ -12,7 +12,6 @@ running = True
 
 while running:  # boucle principale
     interface.start()
-    screen.blit(interface.text_item.txt_task, pos_task)
     pygame.display.flip()
 
     for event in pygame.event.get():

@@ -41,15 +41,16 @@ class Button:
         self.callback = callback
 
     def draw(self, surface):
-        # Dessine le bouton
+        """Méthode pour dessiner le bouton"""
         pygame.draw.rect(
             surface, self.bg_color, self.rect, border_radius=self.border_radius
         )
 
         # Dessine le texte centré sur le bouton
-        text_surf = self.font.render(self.text, True, self.text_color)
-        text_rect = text_surf.get_rect(center=self.rect.center)
-        surface.blit(text_surf, text_rect)
+        if self.text_color != ():  # vérifie si on n'a pas de couleur pour le texte
+            text_surf = self.font.render(self.text, True, self.text_color)
+            text_rect = text_surf.get_rect(center=self.rect.center)
+            surface.blit(text_surf, text_rect)
 
     def enable(self):
         self.enabled = True
