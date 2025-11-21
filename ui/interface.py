@@ -15,6 +15,7 @@ class Interface:
     def start(self):
         """Méthode Start pour lancer l'interface dans main.py"""
         self.task_item.afficher_task()
+<<<<<<< HEAD
         self.largeur_taches = (
             self.task_item.x + self.task_item.width
         )  # retourne la largeur prise sur l'écran par les tâches (utile pour placer les coches)
@@ -60,12 +61,26 @@ class Interface:
             self.hauteur_taches + 10,
             40,
             40,
+=======
+        self.largeur_taches = self.task_item.width_tasks()
+        self.hauteur_taches = self.task_item.height_tasks()
+        self.button_ajouter = Button(
+            self.surface.get_width() // 3,
+            self.hauteur_taches,
+            20,
+            20,
+>>>>>>> d2cc93dd2158b9a82622b2d241912959b9b38c47
             "+",
             (0, 128, 0),
             (0, 0, 0),
             2,
             False,
         )
+<<<<<<< HEAD
         self.button_ajouter.draw(self.surface)  # afficher bouton ajouter
+=======
+        self.button_ajouter.draw(self.surface)
+        # self.button_complement = Button()
+>>>>>>> d2cc93dd2158b9a82622b2d241912959b9b38c47
         # self.button_supprimer = Button()
         # self.button_modifier = Button()
