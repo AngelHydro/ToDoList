@@ -24,21 +24,15 @@ class Fonctionnalite:
         self.liste[titre] = False
         print(f"La tâche '{titre}' a été ajoutée.")
 
-    def cocher(self, titre):
-        """Méthode permettant de cocher la tâche du dictionnaire
+    def cocher_decocher(self, titre):
+        """Méthode permettant de cocher ou décocher la tâche du dictionnaire
         seulement si ce titre existe encore déjà"""
         if titre in self.liste:  # vérifie si le titre est dans le dictionnaire
-            self.liste[titre] = True  # cocher la tâche
-            print(f"La tâche '{titre}' a été validée.")
-            return
-        print(f"La tâche '{titre}' n'existe pas dans la liste.")
-
-    def decocher(self, titre):
-        """Méthode permettant de décocher la tâche du dictionnaire
-        seulement si ce titre existe encore déjà"""
-        if titre in self.liste:  # vérifie si le titre est dans le dictionnaire
-            self.liste[titre] = False  # décocher la tâche
-            print(f"La tâche '{titre}' a été décochée.")
+            self.liste[titre] = not self.liste[titre]  # cocher la tâche
+            if self.liste[titre]:
+                print(f"La tâche '{titre}' a été coché.")
+            else:
+                print(f"La tâche '{titre}' a été décoché.")
             return
         print(f"La tâche '{titre}' n'existe pas dans la liste.")
 

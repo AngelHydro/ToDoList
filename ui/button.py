@@ -4,7 +4,7 @@ import pygame
 import config
 
 
-class Button:
+class Button(object):
     """Classe permettant de créer un bouton"""
 
     def __init__(
@@ -56,7 +56,7 @@ class Button:
         self.enabled = not self.enabled
 
 
-class Coche:
+class Coche(object):
     """Classe Coche définissant :
     - dessiner la coche validée
     - inverser l'état du coche"""
@@ -95,21 +95,17 @@ class Coche:
     def dessiner_coche(self, surface):
         """Méthode qui dessine une coche validée si la coche is_enabled"""
         # Dessine le fond du bouton
-        print(self.is_checked)
         pygame.draw.rect(
             surface, self.bg_color, self.rect, border_radius=self.border_radius
         )
 
         # Dessine la coche seulement si is_checked est True
         if self.is_checked:
-            print(self.is_checked)
             checkmark_surf = self.font.render(self.text, True, self.text_color)
             checkmark_rect = checkmark_surf.get_rect(center=self.rect.center)
             surface.blit(checkmark_surf, checkmark_rect)
 
     def cocher(self, surface):
         """Inverse l'état de la coche (True ou False : coché ou non ?)"""
-        print(self.is_checked)
         self.is_checked = not self.is_checked
-        print(self.is_checked)
         self.dessiner_coche(surface)

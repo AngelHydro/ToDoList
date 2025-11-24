@@ -3,7 +3,7 @@ import pygame
 from ui.fonctionnalite import Fonctionnalite
 
 
-class TaskItem:
+class TaskItem(object):
     """Classe TaskItem qui sert à afficher chaque élément de la liste des tâches"""
 
     def __init__(self, surface):
