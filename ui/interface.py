@@ -98,9 +98,9 @@ class Interface(object):
                         self.liste_buttons_coche[i].text
                     )
                     self.liste_coche[i].cocher(self.surface)
-        for x in self.liste_buttons_complement:  # pour le bouton complément
-            if x.rect.collidepoint(pos):
-                if x.enabled:
+        for element in self.liste_buttons_complement:  # pour le bouton complément
+            if element.rect.collidepoint(pos):
+                if element.enabled:
                     pass
         if self.button_ajouter.enabled:  # pour le bouton ajouter
             pass
